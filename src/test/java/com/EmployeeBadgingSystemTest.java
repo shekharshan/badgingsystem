@@ -69,17 +69,6 @@ public class EmployeeBadgingSystemTest
 
        long durationInMinutes = employeeBadgingSystem.calculateTotalDurationInMinutes(badgingEvents);
 
-       assertTrue(badgingEvents.size() == 4);
-
-       assertTrue(badgingEvents.get(0).getBuilding() == Building.BUILDING1);
-       assertTrue(badgingEvents.get(0).getEventType() == BadgingEventType.ENTRY);
-       assertTrue(badgingEvents.get(1).getBuilding() == Building.BUILDING1);
-       assertTrue(badgingEvents.get(1).getEventType() == BadgingEventType.EXIT);
-       assertTrue(badgingEvents.get(2).getBuilding() == Building.BUILDING2);
-       assertTrue(badgingEvents.get(2).getEventType() == BadgingEventType.ENTRY);
-       assertTrue(badgingEvents.get(3).getBuilding() == Building.BUILDING2);
-       assertTrue(badgingEvents.get(3).getEventType() == BadgingEventType.EXIT);
-
        //Verify that employee is considered to have worked from 8 am till 3 pm
         assertTrue(durationInMinutes == (7 * 60));
     }
@@ -93,17 +82,6 @@ public class EmployeeBadgingSystemTest
 
        long durationInMinutes = employeeBadgingSystem.calculateTotalDurationInMinutes(badgingEvents);
 
-       assertTrue(badgingEvents.size() == 4);
-
-       assertTrue(badgingEvents.get(0).getBuilding() == Building.BUILDING1);
-       assertTrue(badgingEvents.get(0).getEventType() == BadgingEventType.ENTRY);
-       assertTrue(badgingEvents.get(1).getBuilding() == Building.BUILDING1);
-       assertTrue(badgingEvents.get(1).getEventType() == BadgingEventType.EXIT);
-       assertTrue(badgingEvents.get(2).getBuilding() == Building.BUILDING2);
-       assertTrue(badgingEvents.get(2).getEventType() == BadgingEventType.ENTRY);
-       assertTrue(badgingEvents.get(3).getBuilding() == Building.BUILDING2);
-       assertTrue(badgingEvents.get(3).getEventType() == BadgingEventType.EXIT);
-
        //Verify employee considered to have work 9 hours
        assertTrue(durationInMinutes == (9 * 60));
     }
@@ -115,17 +93,6 @@ public class EmployeeBadgingSystemTest
        badgingEvents.add(new BadgingEvent(Building.BUILDING2, BadgingEventType.EXIT, "emp-001", createTimeWithHourMinuteSecond(14,0,0)));
 
        long durationInMinutes = employeeBadgingSystem.calculateTotalDurationInMinutes(badgingEvents);
-
-       assertTrue(badgingEvents.size() == 4);
-
-       assertTrue(badgingEvents.get(0).getBuilding() == Building.BUILDING1);
-       assertTrue(badgingEvents.get(0).getEventType() == BadgingEventType.ENTRY);
-       assertTrue(badgingEvents.get(1).getBuilding() == Building.BUILDING1);
-       assertTrue(badgingEvents.get(1).getEventType() == BadgingEventType.EXIT);
-       assertTrue(badgingEvents.get(2).getBuilding() == Building.BUILDING2);
-       assertTrue(badgingEvents.get(2).getEventType() == BadgingEventType.ENTRY);
-       assertTrue(badgingEvents.get(3).getBuilding() == Building.BUILDING2);
-       assertTrue(badgingEvents.get(3).getEventType() == BadgingEventType.EXIT);
 
        assertTrue(durationInMinutes == (6 * 60));
     }
