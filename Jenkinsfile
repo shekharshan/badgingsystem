@@ -6,7 +6,7 @@ pipeline {
         }
     }
     stages {
-        stage("Hello") {
+        stage("commit") {
             steps {
                 sh "mvn clean compile test"
             }
