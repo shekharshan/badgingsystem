@@ -1,6 +1,7 @@
 pipeline {
     agent {
         docker {
+            agent 'aws'
             image 'maven:3.3-jdk-8'
             args '-u root:root'
         }
