@@ -9,7 +9,9 @@ pipeline {
     stages {
         stage("commit") {
             steps {
-                sh "mvn clean compile test"
+				step {
+					sh "mvn clean compile test"
+				}
             }
         }
     }
